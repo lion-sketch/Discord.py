@@ -1,0 +1,17 @@
+import discord
+import random
+from discord.ext import commands
+
+Client = discord.client
+client = commands.Bot(command_prefix = '//')
+Clientdiscord = discord.Client()
+
+@client.event
+async def on_ready():
+   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing,name='Getting Coded'))
+   print('Bot is on!')
+
+@client.command()
+async def ping(ctx):
+    await ctx.send("Pong!")
+client.run('token')
